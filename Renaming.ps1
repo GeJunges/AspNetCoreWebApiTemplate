@@ -7,11 +7,11 @@ PowerShell script to rename C# Project step-by-step:
 #>
 
 $NewProjectName = Read-Host -Prompt 'INPUT THE NEW PROJECT NAME'
-$OldFolderPath = ".\AspNetCoreTemplate"
+$OldFolderPath = ".\AspNetCoreWebApiTemplate"
 $NewFolderPath = ".\$NewProjectName"
 
 
-echo "Step 1 - Renaming Default Folder of AspNetCoreTemplate"
+echo "Step 1 - Renaming Default Folder of AspNetCoreWebApiTemplate"
 try {
 	Rename-Item -Path $OldFolderPath -newName $NewProjectName  -ErrorAction Stop
 	Write-Verbose "Renamed Default Folder from $OldFolderPath to $NewFolderPath" -Verbose
@@ -20,7 +20,7 @@ try {
 }
 echo "End Step 1"
 
- $OldProjectFilePath=".\$OldProjectName\$NewProjectName\AspNetCoreTemplate"
+ $OldProjectFilePath=".\$OldProjectName\$NewProjectName\AspNetCoreWebApiTemplate"
  $OldProjectName=[IO.Path]::GetFileNameWithoutExtension($OldProjectFilePath)
   
  echo "Step 2 - Renaming Projects Folders, Solution and Projects File"
